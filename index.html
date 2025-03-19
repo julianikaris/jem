@@ -1,31 +1,110 @@
 <html>
-<header>
-   <center> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="50px" height="500px" /> </center>
-   <center> <h1>Perpustakaan Juliani</h1> </center>
-<nav>
-<ul>
-         <li><a href="index.html">Homepage</a></li>
-         <li><a href="biodata.html">About</a></li>
-	 <li><a href="contactus.html">Contact Us</a></li>
-      </ul>
-  </div>
-</ul>
-</nav>
-</header>
-<html>
 <head>
-<title>Perpustakaan Digital Juliani</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital Juliani</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(https://minews.id/wp-content/uploads/2022/03/ptra.yogapCavyTKZJxrd3.jpg); /* Gambar latar Perpustakaan Freedom */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        header {
+            background-color: #89ABE3FF;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 8px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #77C3EC;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .pulsating-circle {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: pulse 2s infinite ease-in-out;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <html>
-<head>
-    <title>Membuat Garis Horizontal</title>
-</head>
-<body>
-    <hr />
-</body>
-</html>
-    <center><h1>Halo👋</h1>
+    <!-- Header -->
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png"
+            alt="Logo Website" />
+        <h1>Perpustakaan Juliani</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="biodata.html">About</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <center><h1>Halo👋</h1>
 <p>Selamat datang di website Perpustakaan Digital Juliani. Salam kenal, saya mahasiswa jurusan Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Website ini dibuat guna memenuhi tugas dan praktik Mata Kuliah Pengembangan Web Perpustakaan. Berikut ini adalah <b><i>homepage</i></b> yang saya buat. 
 </p> </center>
 </body>
@@ -41,59 +120,61 @@
 <h3>Kerja sama dengan Perpustakaan lain</h3>
 <a href="https://perpustakaanfreedom.com/"target="_blank">Perpustakaan Freedom </a> 
 <p></p>
-<img src="https://kcic.co.id/lkapp/wp-content/uploads/2021/07/Perpustakaan-Umum-Freedom-Institute-14-2.jpg" width="500px"/>
-</center>
-<style>
-header {
-   background-color: #89ABE3FF;
-   color: white;
-   padding: 20px 10px;
-   text-align: center;
-}
+<table>
+<tr>
+<td><img src="https://kcic.co.id/lkapp/wp-content/uploads/2021/07/Perpustakaan-Umum-Freedom-Institute-14-2.jpg" width="500px" height="290px"></td>
+<td><img src="https://1.bp.blogspot.com/-PbkgqOA8sMg/YR8uJySN3-I/AAAAAAAAD7I/1DMOYH4nh9043AuFw2PKWWvb3t-qbqKTgCLcBGAsYHQ/s1920/20191507Freedom-2.jpg" width="500px" height=290px"></td>
+</tr>
+</table>
 
-header img {
-   height: 50px;
-}
+        <!-- Rekomendasi Buku -->
+        <h3>Rekomendasi Buku</h3>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
 
-header nav ul li {
-   display: inline;
-   margin: 0 10px;
-}
+            <!-- Buku 1 -->
+            <div style="text-align: center; width: 150px;">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348714874i/10673823.jpg" style="width: 100%; border-radius: 8px;">
+                <p>Google Resume</p>
+            </div>
 
-header nav ul li a {
-   color: white;
-   text-decoration: none;
-}
-</style>
-	<body>
-		<html>
-<head>
-<meta charset="utf-8">
-<meta content='width=device-width, initial-scale=1' name='viewport'>
-<style>
-body {
-  background-color:#FCF6F5FF;
-  margin:0;
-  padding:0;
-}
-iframe{
-    border:0;
-    width: 100%;
-    height: 99vh;
-}
+            <!-- Buku 2 -->
+            <div style="text-align: center; width: 150px;">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1621523349i/54221600.jpg" style="width: 100%; border-radius: 8px;">
+                <p>Untuk Apa Aku ada di Dunia ini?</p>
+                </div>
 
-</style>
+            <!-- Buku 3 -->
+            <div style="text-align: center; width: 150px;">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565594000l/51310962.jpg" style="width: 100%; border-radius: 8px;">
+                <p>Mantappu Jiwa</p>
+           </div>
 
-<script>
-function getQueryVariable(variable) {
-	var query = window.location.search.substring(1);
-	var vars = query.split("&");
-	for (var i=0;i<vars.length;i++) {
-		var pair = vars[i].split("=");
-		if(pair[0] == variable){return pair[1];}
-	}
-	return(false);
-}
+ 	   <!-- Buku 4 -->
+            <div style="text-align: center; width: 150px;">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1482294100i/33535943.jpg" style="width: 100%; border-radius: 8px;">
+                <p>Jingga untuk Matahari</p>
+           </div>
+
+ 	   <!-- Buku 5 -->
+            <div style="text-align: center; width: 150px;">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489732961i/1362193.jpg" style="width: 100%; border-radius: 8px;">
+                <p>Laskar Pelangi</p>
+           </div>
+
+ 	  <!-- Buku 6 -->
+            <div style="text-align: center; width: 150px;">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1548033656i/42861019.jpg" style="width: 100%; border-radius: 8px;">
+                <p>Filosofi Teras</p>
+           </div>
+
+ 	  <!-- Buku 7 -->
+            <div style="text-align: center; width: 150px;">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1630823025i/56317605.jpg" style="width: 100%; border-radius: 8px;">
+                <p>You do You</p>
+           </div>
+
+        </div>
+    </main>
 
 </script>
 </head>
@@ -171,7 +252,7 @@ function getQueryVariable(variable) {
 </html>
 </body>
 <footer>
-  <p>&copy; 2025 All rights reserved</p>
+  <p>&copy; 2025🍫</p>
 </footer>
 <style>
 footer {
