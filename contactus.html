@@ -3,78 +3,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0;
-  }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #BBC3F2;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
-  .header {
-    background-color: #BBC3F2;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+        header {
+            background-color: #77C3EC;
+            color: white;
+            padding: 20px 10px;
+            display: flex;
+            align-items: center; /* Untuk menyelaraskan logo dan teks secara vertikal */
+            justify-content: space-between; /* Mengatur elemen di header */
+        }
 
-  .header img {
-    height: 55px;
-    width: 55px;
-  }
+        header img {
+            height: 50px;
+            margin-right: 10px; /* Jarak antara logo dan teks */
+        }
 
-  .header a {
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 4px;
-  }
+        .header-text {
+            font-size: 20px; /* Ukuran teks */
+            font-weight: bold; /* Membuat teks tebal */
+        }
 
-  .header a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+        nav {
+            margin-right: 10px;
+        }
 
-  .header a.active {
-    background-color: dodgerblue;
-    color: white;
-  }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
 
-  button {
-    background-color: dodgerblue;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
+        nav ul li {
+            margin: 0 8px;
+        }
 
-  button:hover {
-    background-color: #0056b3;
-  }
+        nav ul li a.button {
+            display: inline-block;
+            background-color: #89CFF0; /* Baby blue */
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
 
-  footer {
-    background-color: #BBC3F2;
-    color: black;
-    text-align: center;
-    padding: 20px;
-  }
-</style>
+        nav ul li a.button:hover {
+            background-color: #77C3EC;
+        }
+
+        main {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #77C3EC;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .pulsating-circle {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: pulse 2s infinite ease-in-out;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <div class="header container-fluid">
-    <div class="d-flex align-items-center">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" />
-      <h1 class="ms-3" style="font-size: 1.5rem;">Perpustakaan Juliani</h1>
-    </div>
-    <div>
-      <a href="index.html" class="active">Homepage</a>
-      <a href="biodata.html">About</a>
-      <a href="contactus.html">Contact Us</a>
-    </div>
-  </div>
-
+    <!-- Header -->
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" />
+            <div class="header-text">Perpustakaan Juliani</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="button">Homepage</a></li>
+                <li><a href="biodata.html" class="button">About</a></li>
+                <li><a href="contactus.html" class="button">Contact Us</a></li>
+	    </ul>
+	</nav>
+    </header>
   <!-- Contact Form -->
   <div class="contact-container container my-5">
     <form action="" method="get" class="row g-3">
