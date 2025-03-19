@@ -122,7 +122,7 @@
 <h3>Kerja sama dengan Perpustakaan lain</h3>
 <a href="https://perpustakaanfreedom.com/"target="_blank">Perpustakaan Freedom </a> 
 <p></p>
-<td><img src="https://1.bp.blogspot.com/-PbkgqOA8sMg/YR8uJySN3-I/AAAAAAAAD7I/1DMOYH4nh9043AuFw2PKWWvb3t-qbqKTgCLcBGAsYHQ/s1920/20191507Freedom-2.jpg" width="100%"></td>
+<td><img src="https://1.bp.blogspot.com/-PbkgqOA8sMg/YR8uJySN3-I/AAAAAAAAD7I/1DMOYH4nh9043AuFw2PKWWvb3t-qbqKTgCLcBGAsYHQ/s1920/20191507Freedom-2.jpg" width="500px"></td>
 </center>
 </html>
 
@@ -180,76 +180,6 @@
 <body>
 <html>
 
-<head>
-  <script src="https://js.cx/libs/animate.js"></script>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-
-  <div id="field">
-    <img src="https://js.cx/clipart/ball.svg" width="40" height="40" id="ball">
-  </div>
-<style>
-#field {
-  height: 200px;
-  border-bottom: 3px black groove;
-  position: relative;
-}
-
-#ball {
-  position: absolute;
-  cursor: pointer;
-}
-</style>
-  <script>
-    function makeEaseOut(timing) {
-      return function(timeFraction) {
-        return 1 - timing(1 - timeFraction);
-      }
-    }
-
-    function bounce(timeFraction) {
-      for (let a = 0, b = 1; 1; a += b, b /= 2) {
-        if (timeFraction >= (7 - 4 * a) / 11) {
-          return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
-        }
-      }
-    }
-
-    function quad(timeFraction) {
-      return Math.pow(timeFraction, 2);
-    }
-
-    ball.onclick = function() {
-
-      let height = field.clientHeight - ball.clientHeight;
-      let width = 100;
-
-      animate({
-        duration: 2000,
-        timing: makeEaseOut(bounce),
-        draw: function(progress) {
-          ball.style.top = height * progress + 'px'
-        }
-      });
-
-      animate({
-        duration: 2000,
-        timing: makeEaseOut(quad),
-        draw: function(progress) {
-          ball.style.left = width * progress + "px"
-        }
-      });
-    }
-  </script>
-
-
-</body>
-
-</html>
-</body>
 <footer>
   <p>&copy; 2025🍫</p>
 </footer>
