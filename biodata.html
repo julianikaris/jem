@@ -1,5 +1,77 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hellow</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Gaya untuk overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Efek transparansi */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Gaya untuk pesan */
+        .welcome-alert {
+            background-color: #9da4eb;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .welcome-alert button {
+            margin-top: 10px;
+            background-color: white;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .welcome-alert button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dialog Selamat Datang -->
+    <div class="overlay" id="welcome-overlay">
+        <div class="welcome-alert">
+            <h2>yahooo!</h2>
+            <p>It's pleasure to meet you😊</p>
+            <button onclick="closeWelcome()">let's go</button>
+        </div>
+    </div>
+    <script>
+        // Fungsi untuk menutup dialog selamat datang
+        function closeWelcome() {
+            document.getElementById("welcome-overlay").style.display = "none";
+        }
+
+        // Menampilkan pesan selamat datang saat halaman dimuat
+        window.onload = function () {
+            document.getElementById("welcome-overlay").style.display = "flex";
+        };
+    </script>
+</body>
+</html>
+<html>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -62,72 +134,125 @@ body {
 </head>
 <body>
 
-<div class="header">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="55px" height="55px" /> 
-  <div class="header-right">
-    <a href="index.html">Homepage</a>
-    <a href="biodata.html">About</a>
-    <a href="contactus.html">Contact Us</a>
-  </div>
-</div>
-    
-<html>
-    <head></head><title>About Me</title>
-    </head>
-<body>
-    <center><h1>About Me</h1></center>
-
-<table border="1" cellpadding="10" cellspacing="0">
-    <th  bgcolor="A1CAF1">Data Diri</th>
-    <th  bgcolor="89CFF0">Keterangan</th>
-    <tr>
-        <td>Nama</td>
-        <td>Juliani Ekaristi Marbun</td>
-    </tr>
-
-    <tr>
-        <td>NIM</td>
-        <td>220709066</td>
-    </tr>
-
-    <tr>
-        <td>Jurusan</td>
-        <td>Perpustakaan dan Sains Informasi</td>
-    </tr>
-
-    <tr>
-        <td>Fakultas</td>
-        <td>Ilmu Budaya</td>
-    </tr>
-
-    <tr>
-        <td>Perguruan Tinggi</td>
-        <td>Universitas Sumatera Utara</td>
-    </tr>
-
-    <tr>
-        <td>E-mail</td>
-        <td>julianiekaristi@students.usu.ac.id</td>
-    </tr>
-</table>
 <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
- 
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-        }
-        th {
-            background-color: #77A0F2;
-            color: white;
-        }
-        tr:hover {background-color: #f3fafe;}
+    .header {
+        display: flex;
+        align-items: center; /* Ratakan secara vertikal */
+        justify-content: center; /* Ratakan secara horizontal */
+        background-color: #3D79F2; /* Warna latar belakang header */
+        padding: 20px 10px;
+    }
+
+    .header img {
+        width: 55px; /* Ukuran logo */
+        height: 55px;
+        margin-right: 20px; /* Beri jarak antara logo dan tautan */
+    }
+
+    .navbar {
+        display: flex;
+        gap: 15px; /* Jarak antar tautan */
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 15px;
+        background-color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+        background-color: #FFF6D2; /* Warna hover */
+    }
+
+    .navbar a.active {
+        background-color: white;
+        color: black;
+    }
 </style>
+
+<div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" />
+    <div class="navbar">
+        <a href="index.html" class="active">Homepage</a>
+        <a href="biodata.html">About</a>
+        <a href="contactus.html">Contact Us</a>
+    </div>
+</div>
+
+
+<style>
+    /* Tambahkan gaya untuk meratakan tabel di tengah */
+    .center-table {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0; /* Memberikan jarak atas dan bawah */
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 80%; /* Lebar tabel sesuai kebutuhan */
+    }
+ 
+    table, th, td {
+        border: 1px solid black;
+    }
+    th, td {
+        padding: 10px;
+    }
+    th {
+        background-color: #77A0F2;
+        color: white;
+    }
+    tr:hover {
+        background-color: #f3fafe;
+    }
+</style>
+
+<body>
+    <center>
+        <div style="color: 6CAEED; font-size: 2.5rem; font-weight: bold">About Me</div>
+    </center>
+</body>
+
+
+    <!-- Bungkus tabel dengan div untuk memusatkan -->
+    <div class="center-table">
+        <table border="1" cellpadding="10" cellspacing="0">
+            <th bgcolor="A1CAF1">Data Diri</th>
+            <th bgcolor="89CFF0">Keterangan</th>
+            <tr>
+                <td>Nama</td>
+                <td>Juliani Ekaristi Marbun</td>
+            </tr>
+            <tr>
+                <td>NIM</td>
+                <td>220709066</td>
+            </tr>
+            <tr>
+                <td>Jurusan</td>
+                <td>Perpustakaan dan Sains Informasi</td>
+            </tr>
+            <tr>
+                <td>Fakultas</td>
+                <td>Ilmu Budaya</td>
+            </tr>
+            <tr>
+                <td>Perguruan Tinggi</td>
+                <td>Universitas Sumatera Utara</td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td>julianiekaristi@students.usu.ac.id</td>
+            </tr>
+        </table>
+    </div>
+</body>
 </body>
 </html>
 <html>
