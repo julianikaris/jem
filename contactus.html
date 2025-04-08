@@ -1,64 +1,64 @@
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #BBC3F2;
+            background-color: #E6E6FA;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            display: flex; /* Menggunakan flexbox untuk tata letak halaman */
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
-            background-color: 6495ED;
+            background-color: #2C3E50;
             color: white;
             padding: 20px 10px;
             display: flex;
-            align-items: center; /* Untuk menyelaraskan logo dan teks secara vertikal */
-            justify-content: space-between; /* Mengatur elemen di header */
+            align-items: center; /* Menyelaraskan logo dan teks secara vertikal */
+            justify-content: space-between; /* Menyelaraskan konten secara horizontal */
         }
 
         header img {
-            height: 50px;
-            margin-right: 10px; /* Jarak antara logo dan teks */
-        }
-
-        .header-text {
-            font-size: 20px; /* Ukuran teks */
-            font-weight: bold; /* Membuat teks tebal */
+            width: 55px;
+            height: 55px;
         }
 
         nav {
-            margin-right: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
             display: flex;
+            gap: 15px; /* Memberi jarak antar tautan */
         }
 
-        nav ul li {
-            margin: 0 8px;
-        }
-
-        nav ul li a.button {
-            display: inline-block;
-            background-color: white; 
-            color: black;
+        nav a {
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
+            color: black;
+            padding: 10px 15px;
+            background-color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
 
-        nav ul li a.button:hover {
-            background-color: #77C3EC;
+        nav a:hover {
+            background-color: #FFF6D2; /* Warna saat hover */
+        }
+
+        nav a.active {
+            background-color: white;
+            color: black;
+        }
+
+        .header-text {
+            font-size: 20px;
+            font-weight: bold;
         }
 
         main {
@@ -66,35 +66,14 @@
             padding: 20px;
             margin: 20px;
             border-radius: 8px;
+            flex-grow: 1; /* Memungkinkan konten utama untuk memenuhi ruang */
         }
 
-        .pulsating-circle {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 30px;
-            height: 30px;
-            background-color: #3498db;
-            border-radius: 50%;
-            animation: pulse 2s infinite ease-in-out;
-            box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: scale(1.5);
-                opacity: 0.7;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
+        footer {
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -105,49 +84,44 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" />
             <div class="header-text">Perpustakaan Juliani</div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="button">Homepage</a></li>
-                <li><a href="biodata.html" class="button">About</a></li>
-                <li><a href="contactus.html" class="button">Contact Us</a></li>
-	    </ul>
-	</nav>
+
+<nav>
+            <a href="index.html" class="active">Homepage</a>
+            <a href="biodata.html">About</a>
+            <a href="contactus.html">Contact Us</a>
+        </nav>
     </header>
-  <!-- Contact Form -->
-  <div class="contact-container container my-5">
-    <form action="" method="get" class="row g-3">
-      <fieldset>
-        <legend><h1><b>Contact Us</b></h1></legend>
-        <div class="col-12">
-          <label for="nama" class="form-label">Nama:</label>
-          <input type="text" id="nama" name="nama-lengkap" class="form-control" />
+
+        
+    <!-- Main Content -->
+    <main>
+        <div class="contact-container container my-5">
+            <form action="" method="get" class="row g-3">
+                <fieldset>
+                    <legend><h1><b>Contact Us</b></h1></legend>
+                    <div class="col-12">
+                        <label for="nama" class="form-label">Nama:</label>
+                        <input type="text" id="nama" name="nama-lengkap" class="form-control" />
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" />
+                    </div>
+                    <div class="col-12">
+                        <label for="komentar" class="form-label">Isi Komentar:</label>
+                        <textarea id="komentar" name="komentar" rows="4" class="form-control"></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary" onclick="alert('Terima Kasih🦋')">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
-        <div class="col-12">
-          <label for="email" class="form-label">Email:</label>
-          <input type="email" id="email" name="email" class="form-control" />
-        </div>
-        <div class="col-12">
-          <label for="komentar" class="form-label">Isi Komentar:</label>
-          <textarea id="komentar" name="komentar" rows="4" class="form-control"></textarea>
-        </div>
-        <div class="col-12 text-center">
-          <button type="submit" class="btn btn-primary" onclick="alert('Terima Kasih🦋')">Submit</button>
-        </div>
-      </fieldset>
-    </form>
-  </div>
-<body>
-<html>
-  <footer class="container-fluid">
-    <p>&copy; 2025🍫</p>
-  </footer>
-	 <style>
-		  footer {
-            background-color: 6495ED;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
-        }
-	  </style>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025🍫</p>
+    </footer>
 </body>
 </html>
