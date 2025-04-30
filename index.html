@@ -1,30 +1,36 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hellow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
+        /* Body Styling */
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Gaya untuk overlay */
+        /* Overlay Styling */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Efek transparansi */
+            background-color: rgba(0, 0, 0, 0.5); /* Transparency Effect */
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
         }
 
-        /* Gaya untuk pesan */
         .welcome-alert {
             background-color: #9da4eb;
             padding: 20px;
@@ -36,61 +42,27 @@
         .welcome-alert button {
             margin-top: 10px;
             background-color: white;
-            color: white;
+            color: #0056b3; /* Fixed Button Text Color */
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         .welcome-alert button:hover {
             background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <!-- Dialog Selamat Datang -->
-    <div class="overlay" id="welcome-overlay">
-        <div class="welcome-alert">
-            <h2>yahoooo!</h2>
-            <p>😊</p>
-            <button onclick="closeWelcome()">let's go</button>
-        </div>
-    </div>
-    <script>
-        // Fungsi untuk menutup dialog selamat datang
-        function closeWelcome() {
-            document.getElementById("welcome-overlay").style.display = "none";
+            color: white; /* Adjusted Hover Text Color */
         }
 
-        // Menampilkan pesan selamat datang saat halaman dimuat
-        window.onload = function () {
-            document.getElementById("welcome-overlay").style.display = "flex";
-        };
-    </script>
-</body>
-</html>
-
-    <title>Perpustakaan Digital Juliani</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        /* Tata Letak Dasar */
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Tinggi minimum untuk memastikan footer berada di bawah */
-        }
-
+        /* Header Styling */
         header {
             background-color: #2C3E50;
             color: white;
             padding: 20px 10px;
             display: flex;
-            align-items: center; /* Menyelaraskan logo dan teks secara vertikal */
-            justify-content: space-between; /* Menyelaraskan konten secara horizontal */
+            align-items: center;
+            justify-content: space-between;
         }
 
         header img {
@@ -100,7 +72,7 @@
 
         nav {
             display: flex;
-            gap: 15px; /* Memberi jarak antar tautan */
+            gap: 15px;
         }
 
         nav a {
@@ -115,7 +87,7 @@
         }
 
         nav a:hover {
-            background-color: #FFF6D2; /* Warna saat hover */
+            background-color: #FFF6D2;
         }
 
         nav a.active {
@@ -123,8 +95,9 @@
             color: black;
         }
 
+        /* Main Content */
         main {
-            flex-grow: 1; /* Membuat konten utama fleksibel untuk mengisi ruang */
+            flex-grow: 1;
             padding: 20px;
             margin: 20px;
             background-color: rgba(255, 255, 255, 0.8);
@@ -140,64 +113,90 @@
 
         @media screen and (max-width: 500px) {
             nav {
-                flex-direction: column; /* Tampilkan navbar dalam kolom untuk layar kecil */
+                flex-direction: column;
                 gap: 10px;
             }
 
             header {
-                flex-direction: column; /* Tata letak header dalam kolom */
+                flex-direction: column;
                 align-items: flex-start;
             }
         }
     </style>
 </head>
 <body>
-    
-    <!-- Header -->
+    <!-- Welcome Overlay -->
+    <div class="overlay" id="welcome-overlay">
+        <div class="welcome-alert">
+            <h2>yahoooo!</h2>
+            <p>😊</p>
+            <button onclick="closeWelcome()">let's go</button>
+        </div>
+    </div>
+
+    <script>
+        // Close Welcome Dialog
+        function closeWelcome() {
+            document.getElementById("welcome-overlay").style.display = "none";
+        }
+
+        // Display Welcome Message on Load
+        window.onload = function () {
+            document.getElementById("welcome-overlay").style.display = "flex";
+        };
+    </script>
+
+    <!-- Header Section -->
     <header>
         <div style="display: flex; align-items: center;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" />
-            <div class="header-text"><h1><b>Perpustakaan Juliani</b></h1></div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+            <div class="header-text">
+                <h1><b>Perpustakaan Juliani</b></h1>
+            </div>
         </div>
 
-<nav>
+        <nav>
             <a href="index.html" class="active">Homepage</a>
             <a href="biodata.html">About</a>
             <a href="contactus.html">Contact Us</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content Section -->
     <main>
         <center>
-            <h1>Halo👋</h1>
+            <h1>Halo 👋</h1>
             <p>
                 Selamat datang di website Perpustakaan Digital Juliani. Salam kenal, saya mahasiswa jurusan Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Website ini dibuat guna memenuhi tugas dan praktik Mata Kuliah Pengembangan Web Perpustakaan.
                 Berikut ini adalah <b><i>homepage</i></b> yang saya buat.
             </p>
-		<form id="search-form" style="margin-left: auto;">
-            <input type="text" id="search-input" placeholder="Search..." />
-            <button type="button" onclick="searchSite()">Search</button>
-        </form>
-		<script>
-    // Fungsi untuk Pencarian
-    function searchSite() {
-        const input = document.getElementById('search-input').value.toLowerCase();
-        const content = document.getElementById('content').innerText.toLowerCase();
 
-        if (content.includes(input)) {
-            alert('Kata kunci ditemukan di dalam konten!');
-        } else {
-            alert('Maaf, kata kunci tidak ditemukan.');
-        }
-    }
-</script>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button type="button" onclick="searchSite()">Search</button>
+            </form>
+            <div id="content" style="display:none">isi dari konten website untuk contoh pencarian</div>
+
+            <script>
+                // Search Functionality
+                function searchSite() {
+                    const input = document.getElementById('search-input').value.toLowerCase();
+                    const content = document.getElementById('content').innerText.toLowerCase();
+
+                    if (content.includes(input)) {
+                        alert('Kata kunci ditemukan di dalam konten!');
+                    } else {
+                        alert('Maaf, kata kunci tidak ditemukan.');
+                    }
+                }
+            </script>
+		<p>
             <a href="https://perpustakaanfreedom.com/" target="_blank">
                 <button class="block"><b>Kuy mampir ke Perpustakaan Freedom</b></button>
+		</p>
             </a>
-        <hr />
-                </center>
-
+        </center>
+    </main>
 <body>
 <head>
         <style>
