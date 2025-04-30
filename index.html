@@ -165,6 +165,19 @@
             <a href="biodata.html">About</a>
             <a href="contactus.html">Contact Us</a>
         </nav>
+	    <script>
+    // Fungsi untuk Pencarian
+    function searchSite() {
+        const input = document.getElementById('search-input').value.toLowerCase();
+        const content = document.getElementById('content').innerText.toLowerCase();
+
+        if (content.includes(input)) {
+            alert('Kata kunci ditemukan di dalam konten!');
+        } else {
+            alert('Maaf, kata kunci tidak ditemukan.');
+        }
+    }
+</script>
     </header>
 
     <!-- Main Content -->
@@ -337,29 +350,7 @@
         </form>
     </nav>
 </header>
-
-<main>
-    <!-- Contoh Konten untuk Pencarian -->
-    <div id="content">
-        <h2>Welcome to Perpustakaan Juliani</h2>
-        <p id="welcome-text">Website ini berisi tentang perpustakaan digital dan informasi terkait.</p>
-    </div>
-</main>
-
-<script>
-    // Fungsi untuk Pencarian
-    function searchSite() {
-        const input = document.getElementById('search-input').value.toLowerCase();
-        const content = document.getElementById('content').innerText.toLowerCase();
-
-        if (content.includes(input)) {
-            alert('Kata kunci ditemukan di dalam konten!');
-        } else {
-            alert('Maaf, kata kunci tidak ditemukan.');
-        }
-    }
-</script>
-
+	
     <!-- Footer -->
     <footer>
         <p>&copy; 2025🍫</p>
