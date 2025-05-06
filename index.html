@@ -199,6 +199,142 @@
         </center>
     </main>
 <body>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekomendasi Buku</title>
+    <style>
+body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        
+        }
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .book-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+        }
+        .book {
+            width: 180px;
+            background-color: rgba(187, 196, 235, 0.9);
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            cursor: pointer;
+        }
+        .book img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .book p {
+            font-weight: bold;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+        .book span {
+            font-size: 12px;
+            color: #34495e;
+        }
+        .synopsis {
+            font-size: 12px;
+            color: #2c3e50;
+            margin-top: 5px;
+            text-align: justify;
+            display: none;
+        }
+        .book a {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 12px;
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .book a:hover {
+            background-color: #1e90ff;
+            color: #fff;
+        }
+        .book:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
+            background-color: rgba(138, 149, 210, 1);
+        }
+        .book:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+<h3>Rekomendasi Buku</h3>
+    <div class="book-container">
+        <div class="book" onclick="toggleSynopsis(this)">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348714874i/10673823.jpg" alt="Google Resume">
+            <p>Google Resume</p>
+            <span>Penulis: Gayle Laakmann McDowell</span>
+            <p class="synopsis">Panduan lengkap untuk mendapatkan pekerjaan di perusahaan teknologi besar seperti Google, Microsoft, dan Apple.</p>
+            <a href="https://books.google.com/books/about/The_Google_Resume.html?id=_TbfM1lA-qYC" target="_blank">Baca di Google Books</a>
+        </div>
+
+        <div class="book" onclick="toggleSynopsis(this)">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1621523349i/54221600.jpg" alt="Untuk Apa Aku ada di Dunia ini?">
+            <p>Untuk Apa Aku Ada di Dunia ini?</p>
+            <span>Penulis: Rick Warren</span>
+            <p class="synopsis">Buku yang membantu pembaca menemukan tujuan hidup mereka melalui refleksi selama 40 hari.</p>
+            <a href="https://www.goodreads.com/book/show/54221600-untuk-apa-aku-ada-di-dunia-ini-the-purpose-driven-life-what-on-earth-am" target="_blank">Baca di Google Books</a>
+        </div>
+
+        <div class="book" onclick="toggleSynopsis(this)">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565594000l/51310962.jpg" alt="Mantappu Jiwa">
+            <p>Mantappu Jiwa</p>
+            <span>Penulis: Jerome Polin</span>
+            <p class="synopsis">Kisah inspiratif perjalanan Jerome dari kehidupan sederhana hingga mendapatkan beasiswa penuh di Jepang.</p>
+            <a href="https://books.google.com/books/about/Mantappu_Jiwa_Buku_Latihan_Soal.html?id=TzCyDwAAQBAJ" target="_blank">Baca di Google Books</a>
+        </div>
+
+        <div class="book" onclick="toggleSynopsis(this)">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1482294100i/33535943.jpg" alt="Jingga untuk Matahari">
+            <p>Jingga untuk Matahari</p>
+            <span>Penulis: Esti Kinasih</span>
+            <p class="synopsis">Novel romantis yang mengisahkan perjalanan cinta dan konflik emosional antara Ari dan Tari.</p>
+            <a href="https://books.google.com/books/about/TeenLit_Jingga_untuk_Matahari.html?id=Ysg8DwAAQBAJ" target="_blank">Baca di Google Books</a>
+        </div>
+
+        <div class="book" onclick="toggleSynopsis(this)">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489732961i/1362193.jpg" alt="Laskar Pelangi">
+            <p>Laskar Pelangi</p>
+            <span>Penulis: Andrea Hirata</span>
+            <p class="synopsis">Kisah inspiratif 10 anak Belitung yang berjuang mendapatkan pendidikan.</p>
+            <a href="https://books.google.com/books/about/Laskar_pelangi.html?id=NMcXmwEACAAJ" target="_blank">Baca di Google Books</a>
+        </div>
+
+        <div class="book" onclick="toggleSynopsis(this)">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1548033656i/42861019.jpg" alt="Filosofi Teras">
+            <p>Filosofi Teras</p>
+            <span>Penulis: Henry Manampiring</span>
+            <p class="synopsis">Buku ini memperkenalkan filosofi Stoikisme untuk menghadapi emosi negatif.</p>
+            <a href="https://books.google.com/books/about/Filosofi_Teras.html?id=016" target="_blank">Baca di Google Books</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleSynopsis(bookElement) {
+            let synopsis = bookElement.querySelector('.synopsis');
+            synopsis.style.display = (synopsis.style.display === 'none' || synopsis.style.display === '') ? 'block' : 'none';
+        }
+    </script>
 <head>
         <style>
         body {
