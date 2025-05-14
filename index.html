@@ -5,8 +5,8 @@
     <!-- Welcome Overlay -->
     <div class="overlay" id="welcome-overlay">
         <div class="welcome-alert">
-            <h2>yahoooo!</h2>
-            <p>😊</p>
+<h2>Welcome</h2>
+           <img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f6f8.gif" alt="GIF" width="77" height="77">
             <button onclick="closeWelcome()">let's go</button>
         </div>
     </div>
@@ -28,6 +28,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
+body {
+            background-color: violet;
+            color: #E6E6FA;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .lampu-tidur {
+            background-color: #3b2f5a; /* Warna biru keunguan lembut */
+            color: #f5e3b3; /* Warna kuning redup */
+            filter: brightness(0.85);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background: linear-gradient(to right, #87CEFA, #D8BFD8);
+
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
         /* Body Styling */
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -45,7 +77,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Transparency Effect */
+            background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan 50% transparansi */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -96,7 +128,13 @@
             gap: 15px;
         }
 
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
         nav a {
+            position: relative;
             text-decoration: none;
             color: black;
             padding: 10px 15px;
@@ -111,78 +149,224 @@
             background-color: #FFF6D2;
         }
 
-        nav a.active {
-            background-color: white;
-            color: black;
-        }
-
-        /* Main Content */
-        main {
-            flex-grow: 1;
-            padding: 20px;
-            margin: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 8px;
-        }
-
-        footer {
-            background-color: #2C3E50;
+        .tooltip {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, #8EC5FC, #E0C3FC);
             color: white;
-            text-align: center;
-            padding: 20px 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
-        @media screen and (max-width: 500px) {
+        nav a:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media screen and (max-width: 768px) {
             nav {
                 flex-direction: column;
                 gap: 10px;
+                display: none;
             }
 
-            header {
-                flex-direction: column;
-                align-items: flex-start;
+            nav.show {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
             }
         }
     </style>
 </head>
-    <!-- Header Section -->
+<body>
+
     <header>
         <div style="display: flex; align-items: center;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="50">
             <div class="header-text">
-		    <p>
                 <h1><b>Perpustakaan Juliani</b></h1>
-		    </p>
             </div>
         </div>
 
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <nav>
-            <a href="index.html" class="active">Homepage</a>
-            <a href="biodata.html">About</a>
-            <a href="contactus.html">Contact Us</a>
-	    <a href="http://localhost/perkalian.php">Tabel Perkalian</a>
-        </nav>
+            <a href="index.html">
+                Homepage
+                <span class="tooltip">Halaman utama⭐</span>
+            </a>
+            <a href="biodata.html">
+                About
+                <span class="tooltip">Tentang Saya👾</span>
+            </a>
+<a href="http://localhost/perkalian.php">
+                PHP
+                <span class="tooltip">Lihat tabel perkalian🧮</span>
+            </a>
+            <a href="contactus.html">
+                Contact Us
+                <span class="tooltip">Hubungi kami📬</span>
+            </a>
+            </nav>
     </header>
 
+    <script>
+        function toggleMenu() {
+            document.querySelector("nav").classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>
+
     <!-- Main Content Section -->
+    <style>
+        .text-box {
+            background: #E6E6FA
+            backdrop-filter: blur(10px); /* Efek kaca */
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #E6E6FA;
+            width: 80%; /* Menyesuaikan ukuran */
+            max-width: 600px; /* Membatasi ukuran maksimum */
+            text-align: center; 
+            margin: 20px auto; 
+        }
+    </style>
+</head>
+<body>
+
     <main>
-        <center>
-            <h1>Halo 👋</h1>
+        <div class="text-box">
+            <h1>Halo📎</h1>
             <p>
                 Selamat datang di website Perpustakaan Digital Juliani. Salam kenal, saya mahasiswa jurusan Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Website ini dibuat guna memenuhi tugas dan praktik Mata Kuliah Pengembangan Web Perpustakaan.
                 Berikut ini adalah <b><i>homepage</i></b> yang saya buat.
-		    <p>
+<p>
             <a href="https://perpustakaanfreedom.com/" target="_blank">
-                <button class="block"><b>Kuy mampir ke Perpustakaan Freedom</b></button>
-		</p>
-            </a>
-            </p>
+    <button class="block">🚀 <b>Kuy mampir ke Perpustakaan Freedom</b> 📚</button>
+</a>
 
-            <form id="search-form">
-                <input type="text" id="search-input" placeholder="Search...">
-                <button type="button" onclick="searchSite()">Search</button>
-            </form>
-            <div id="content" style="display:none">isi dari konten website untuk contoh pencarian</div>
+<style>
+    .block {
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background: linear-gradient(to right, #8EC5FC, #E0C3FC); /* Gradasi warna */
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .block:hover {
+        transform: scale(1.1); /* Efek zoom saat hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(to right, #2575fc, #6a11cb); /* Gradasi berubah saat hover */
+    }
+</style>
+
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .search-box {
+            padding: 12px;
+            width: 100%;
+            border: 2px solid #6a11cb;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .search-box:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+        }
+
+        .search-btn {
+            padding: 12px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(to right, #8EC5FC, #E0C3FC);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+
+        .search-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #8EC5FC, #E0C3FC);
+        }
+
+        .search-btn i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Ikon FontAwesome -->
+</head>
+<body>
+
+    <div class="search-container">
+        <div class="search-title">🔎 Temukan Buku Favoritmu!</div>
+        <input type="text" class="search-box" placeholder="Masukkan judul atau penulis...">
+        <button class="search-btn"><i class="fas fa-search"></i> Cari Sekarang</button>
+            <div id="content" style="display:none">Untuk apa aku ada di dunia ini</div>
 
             <script>
                 // Search Functionality
@@ -202,7 +386,9 @@
 <body>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekomendasi Buku</title>
+<center>
+    <h2>Rekomendasi Buku</h2>
+</center>
     <style>
 body {
             font-family: 'Poppins', sans-serif;
@@ -211,7 +397,7 @@ body {
             padding: 20px;
         
         }
-        h3 {
+        h2 {
             font-size: 24px;
             margin-bottom: 20px;
             color: #2c3e50;
@@ -279,7 +465,6 @@ body {
             transform: scale(1.05);
         }
     </style>
-<h3>Rekomendasi Buku</h3>
     <div class="book-container">
         <div class="book" onclick="toggleSynopsis(this)">
             <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348714874i/10673823.jpg" alt="Google Resume">
@@ -436,21 +621,55 @@ body {
         <p>Celebrate the valuable role of libraries in transforming lives and strengthening communities!</p>
     </div>
 
-<style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .event-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Agar elemen tetap rapi saat layar kecil */
+        }
+
         #Event {
-            width: 100%;
-            height: 500px;
-            object-fit: contain;
-	}
-</style>
-<img id="Event" src="https://alastore.ala.org/sites/default/files/2024-11/national-library-week-2025-poster-600x900-store_0.jpg">
-    <!-- membuat gambar menjadi proporsional dengan object-fit: contain; -->
-    <!-- Event Box -->
-    <div class="event-container">
-        <div class="event-box">
-            <h2>April 6 - 12, 2025</h2>
-            <p>Join us for exciting events, workshops, and activities at your local library.</p>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#eventModal">Learn More</button>
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .event-box {
+            max-width: 400px;
+        }
+
+        /* Responsif untuk layar kecil (mobile) */
+        @media (max-width: 768px) {
+            .event-container {
+                flex-direction: column; /* Susun gambar dan teks secara vertikal */
+                align-items: center;
+                text-align: center;
+            }
+
+            #Event {
+                width: 100%; /* Gambar menyesuaikan lebar */
+                max-width: 300px;
+            }
+
+            .event-box {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="event-container">
+            <img id="Event" src="https://alastore.ala.org/sites/default/files/2024-11/national-library-week-2025-poster-600x900-store_0.jpg" alt="Library Event Poster">
+
+            <div class="event-box">
+                <h2>April 6 - 12, 2025</h2>
+                <p>Join us for exciting events, workshops, and activities at your local library.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventModal">Learn More</button>
+            </div>
         </div>
     </div>
 
@@ -477,7 +696,16 @@ body {
             </div>
         </div>
     </div>
-    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<button onclick="toggleLampuTidur()">🌌</button>
+    <script>
+        function toggleLampuTidur() {
+            document.body.classList.toggle("lampu-tidur");
+        }
+    </script>
        
     <!-- Footer -->
     <footer>
