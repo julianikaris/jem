@@ -283,7 +283,7 @@ body {
     }
 </style>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Ikon FontAwesome -->
     <style>
@@ -356,7 +356,7 @@ body {
 <body>
 
     <div class="search-container">
-        <div class="search-title">Seek and discover your next literary adventure!🔭</div>
+        <div class="search-title">🔎 Temukan Buku Favoritmu!</div>
         <input type="text" id="search-input" class="search-box" placeholder="Masukkan judul atau penulis...">
         <button class="search-btn" onclick="searchSite()"><i class="fas fa-search"></i> Cari Sekarang</button>
     </div>
@@ -380,7 +380,7 @@ body {
             }
         }
     </script>
- </center>
+        </center>
     </main>
 <body>
 <meta charset="UTF-8">
@@ -705,6 +705,124 @@ body {
             document.body.classList.toggle("lampu-tidur");
         }
     </script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 15px;
+            left: 5%;
+            width: 90%;
+            background: linear-gradient(to right, #87CEEB, #D8BFD8);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .cookie-banner p {
+            flex: 1;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        .cookie-banner a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .cookie-banner button {
+            background: #FFD700;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .cookie-banner button:hover {
+            background: #FFAC00;
+        }
+
+        @media (max-width: 600px) {
+            .cookie-banner {
+                flex-direction: column;
+                width: 85%;
+                left: 7.5%;
+                text-align: center;
+            }
+
+            .cookie-banner p {
+                font-size: 14px;
+            }
+
+            .cookie-banner button {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda🍪. <a href="#">Pelajari lebih lanjut</a></p>
+        <button onclick="acceptCookies()">Saya Setuju</button>
+        <button onclick="manageCookies()">Kelola Cookie</button>
+    </div>
+
+    <script>
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function manageCookies() {
+            let confirmation = confirm("Apakah Anda ingin menghapus cookie?");
+            if (confirmation) {
+                document.cookie = "cookiesAccepted=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.getElementById('cookie-banner').style.display = 'block';
+                alert("Cookie telah dihapus!");
+            }
+        }
+
+        function acceptCookies() {
+            setCookie("cookiesAccepted", "true", 30);
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        window.onload = function() {
+            if (getCookie("cookiesAccepted") === "true") {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        };
+    </script>
+
        
     <!-- Footer -->
     <footer>
