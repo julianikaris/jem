@@ -803,48 +803,31 @@ body {
             color: #333;
             width: calc(100% - 24px);
         }
+/* Tombol Lampu Tidur */
+        .lampu-tidur-button {
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #4B0082, #87CEEB);
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-     <style>
-    .lampu-tidur-button {
-        position: fixed;
-        bottom: 70px; /* Menyesuaikan agar tidak tertutup footer */
-        left: 15px;
-        width: 45px;
-        height: 45px;
-        background: linear-gradient(135deg, #4B0082, #87CEEB);
-        color: white;
-        font-size: 20px;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: 0.3s ease;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .lampu-tidur .lampu-tidur-button {
-        background: linear-gradient(135deg, #FFD700, #FF8C00);
-        color: black;
-    }
-
-    footer {
-        text-align: center;
-        padding: 15px;
-        background: linear-gradient(to right, #4682B4, #8A2BE2);
-        color: white;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        font-size: 14px;
-        box-shadow: 0px -4px 10px rgba(0,0,0,0.2);
-    }
-</style>
-
-<button class="lampu-tidur-button" onclick="toggleLampuTidur()">🌙</button>
-
-
+        .lampu-tidur .lampu-tidur-button {
+            background: linear-gradient(135deg, #FFD700, #FF8C00);
+            color: black;
+        }
+	    
         /* Cookie Banner */
         .cookie-banner {
             position: fixed;
@@ -914,8 +897,8 @@ body {
 <body>
 
     <div class="komunitas-container">
+	    <span class="tooltip">Kolom diskusi komunitas</span>
         <h3>💬📝📊</h3>
-	<span class="tooltip">Kolom diskusi komunitas</span>
         <textarea id="inputKomentar" placeholder="Tulis komentar Anda..." rows="4"></textarea>
         <button id="tombolKirim">Kirim</button>
         <div id="daftarKomentar"></div>
