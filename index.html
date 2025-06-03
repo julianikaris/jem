@@ -705,11 +705,36 @@ body {
 </body>
 </html>
 
-<html>	
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Komentar Komunitas</title>
     <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Mode malam */
+        .lampu-tidur {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        .lampu-tidur .komunitas-container,
+        .lampu-tidur .komentar,
+        .lampu-tidur .balasan,
+        .lampu-tidur .cookie-banner,
+        .lampu-tidur footer {
+            background: #2c2c2c;
+            color: #dcdcdc;
+            box-shadow: none;
+        }
+
+        /* Container utama */
         .komunitas-container {
             background: rgba(255, 255, 255, 0.95);
             padding: 24px;
@@ -721,6 +746,7 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin: auto;
         }
 
         textarea {
@@ -777,56 +803,49 @@ body {
             color: #333;
             width: calc(100% - 24px);
         }
-    </style>
-	<body>
-    <div class="komunitas-container">
-        <h3>Diskusi Komunitas</h3>
-        <textarea id="inputKomentar" placeholder="Tulis komentar Anda..." rows="4"></textarea>
-        <button id="tombolKirim">Kirim</button>
-        <div id="daftarKomentar"></div>
-    </div>
-    <script>
-        var tombolKirim = document.getElementById('tombolKirim');
-        var inputKomentar = document.getElementById('inputKomentar');
-        var daftarKomentar = document.getElementById('daftarKomentar');
 
-        tombolKirim.onclick = function() {
-            var komentarTeks = inputKomentar.value.trim();
+     <style>
+    .lampu-tidur-button {
+        position: fixed;
+        bottom: 70px; /* Menyesuaikan agar tidak tertutup footer */
+        left: 15px;
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, #4B0082, #87CEEB);
+        color: white;
+        font-size: 20px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-            if (komentarTeks === '') {
-                alert('Komentar tidak boleh kosong!');
-                return;
-            }
+    .lampu-tidur .lampu-tidur-button {
+        background: linear-gradient(135deg, #FFD700, #FF8C00);
+        color: black;
+    }
 
-            var komentarBaru = document.createElement('p');
-            komentarBaru.className = 'komentar';
-            komentarBaru.textContent = komentarTeks;
+    footer {
+        text-align: center;
+        padding: 15px;
+        background: linear-gradient(to right, #4682B4, #8A2BE2);
+        color: white;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        font-size: 14px;
+        box-shadow: 0px -4px 10px rgba(0,0,0,0.2);
+    }
+</style>
 
-            var balasan = document.createElement('p');
-            balasan.className = 'balasan';
-            balasan.textContent = 'Terima kasih atas komentar Anda!';
+<button class="lampu-tidur-button" onclick="toggleLampuTidur()">🌙</button>
 
-            daftarKomentar.appendChild(komentarBaru);
-            daftarKomentar.appendChild(balasan);
-            inputKomentar.value = '';
-        };
-    </script>
-</body>
-</html>
-<button onclick="toggleLampuTidur()">🌌</button>
-    <script>
-        function toggleLampuTidur() {
-            document.body.classList.toggle("lampu-tidur");
-        }
-    </script>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
 
+        /* Cookie Banner */
         .cookie-banner {
             position: fixed;
             bottom: 15px;
@@ -869,6 +888,19 @@ body {
             background: #FFAC00;
         }
 
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(to right, #4682B4, #8A2BE2);
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+            box-shadow: 0px -4px 10px rgba(0,0,0,0.2);
+        }
+
         @media (max-width: 600px) {
             .cookie-banner {
                 flex-direction: column;
@@ -876,18 +908,20 @@ body {
                 left: 7.5%;
                 text-align: center;
             }
-
-            .cookie-banner p {
-                font-size: 14px;
-            }
-
-            .cookie-banner button {
-                width: 100px;
-            }
         }
     </style>
 </head>
 <body>
+
+    <div class="komunitas-container">
+        <h3>💬📝📊</h3>
+	<span class="tooltip">Kolom diskusi komunitas</span>
+        <textarea id="inputKomentar" placeholder="Tulis komentar Anda..." rows="4"></textarea>
+        <button id="tombolKirim">Kirim</button>
+        <div id="daftarKomentar"></div>
+    </div>
+
+    <button class="lampu-tidur-button" onclick="toggleLampuTidur()">🌙</button>
 
     <div id="cookie-banner" class="cookie-banner">
         <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda🍪. <a href="#">Pelajari lebih lanjut</a></p>
@@ -895,52 +929,43 @@ body {
         <button onclick="manageCookies()">Kelola Cookie</button>
     </div>
 
+    <footer>
+        © 2025🍫
+    </footer>
+
     <script>
-        function setCookie(name, value, days) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + value + expires + "; path=/";
-        }
+        document.getElementById('tombolKirim').onclick = function() {
+            var komentarTeks = document.getElementById('inputKomentar').value.trim();
 
-        function getCookie(name) {
-            let nameEQ = name + "=";
-            let ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i].trim();
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            if (komentarTeks === '') {
+                alert('Komentar tidak boleh kosong!');
+                return;
             }
-            return null;
-        }
 
-        function manageCookies() {
-            let confirmation = confirm("Apakah Anda ingin menghapus cookie?");
-            if (confirmation) {
-                document.cookie = "cookiesAccepted=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                document.getElementById('cookie-banner').style.display = 'block';
-                alert("Cookie telah dihapus!");
-            }
+            var daftarKomentar = document.getElementById('daftarKomentar');
+            var komentarBaru = document.createElement('p');
+            komentarBaru.className = 'komentar';
+            komentarBaru.textContent = komentarTeks;
+
+            var balasan = document.createElement('p');
+            balasan.className = 'balasan';
+            balasan.textContent = 'Terima kasih atas komentar Anda!';
+
+            daftarKomentar.appendChild(komentarBaru);
+            daftarKomentar.appendChild(balasan);
+            document.getElementById('inputKomentar').value = '';
+        };
+
+        function toggleLampuTidur() {
+            document.body.classList.toggle("lampu-tidur");
+            document.querySelector(".lampu-tidur-button").textContent =
+                document.body.classList.contains("lampu-tidur") ? "☀️" : "🌙";
         }
 
         function acceptCookies() {
-            setCookie("cookiesAccepted", "true", 30);
             document.getElementById('cookie-banner').style.display = 'none';
         }
-
-        window.onload = function() {
-            if (getCookie("cookiesAccepted") === "true") {
-                document.getElementById('cookie-banner').style.display = 'none';
-            }
-        };
     </script>
 
-       
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025🍫</p>
-    </footer>
 </body>
 </html>
