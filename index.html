@@ -883,7 +883,43 @@ body {
     </style>
 </head>
 <body>
+<style>
+    /* Gaya utama untuk container komunitas */
+    .komunitas-container {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 24px;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: auto;
+    }
 
+    /* Tooltip */
+    .tooltip {
+        position: absolute;
+        top: -30px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Tampilkan tooltip saat hover */
+    .komunitas-container:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
     <div class="komunitas-container">
 <span class="tooltip">Kolom diskusi komunitas</span>
         <h3>💬📝📊</h3>
@@ -899,11 +935,6 @@ body {
         <button onclick="acceptCookies()">Saya Setuju</button>
         <button onclick="manageCookies()">Kelola Cookie</button>
     </div>
-
-    <footer>
-        © 2025🍫
-    </footer>
-
     <script>
         document.getElementById('tombolKirim').onclick = function() {
             var komentarTeks = document.getElementById('inputKomentar').value.trim();
@@ -940,3 +971,6 @@ body {
 
 </body>
 </html>
+<footer>
+        © 2025🍫
+    </footer>
