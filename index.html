@@ -355,7 +355,6 @@ body {
             margin-right: 10px;
             font-size: 20px;
         }
-	    <span class="tooltip">Menuju website Perpustakaan Freedom🧭</span>
     </style>
 </head>
 <body>
@@ -368,23 +367,56 @@ body {
 
     <div id="content" style="display:none">Untuk apa aku ada di dunia ini</div>
 
-    <script>
-        function searchSite() {
-            const input = document.getElementById('search-input').value.toLowerCase();
-            const content = document.getElementById('content').innerText.toLowerCase();
+   <script>
+    document.getElementById('search-input').addEventListener('input', function () {
+        const input = this.value.toLowerCase();
+        const keywords = input.split(/\s+/);
+        const books = document.querySelectorAll('.book');
 
-            if (input.trim() === "") {
-                alert("Harap masukkan kata kunci!");
-                return;
-            }
+        let found = false;
+        books.forEach(book => {
+            const title = book.querySelector('p').innerText.toLowerCase();
+            const author = book.querySelector('span').innerText.toLowerCase();
 
-            if (content.includes(input)) {
-                alert('Kata kunci ditemukan di dalam konten!');
+            const match = keywords.every(word => title.includes(word) || author.includes(word));
+
+            if (match) {
+                book.style.display = "block";
+                found = true;
             } else {
-                alert('Maaf, kata kunci tidak ditemukan.');
+                book.style.display = "none";
             }
+        });
+
+        if (!found && input.length > 0) {
+            alert('Maaf, buku tidak ditemukan.');
         }
-    </script>
+    });
+</script>
+
+<script>
+    // (searchSite replaced above)
+        const input = document.getElementById('search-input').value.toLowerCase();
+        const books = document.querySelectorAll('.book');
+
+        let found = false;
+        books.forEach(book => {
+            const title = book.querySelector('p').innerText.toLowerCase();
+            const author = book.querySelector('span').innerText.toLowerCase();
+            if (title.includes(input) || author.includes(input)) {
+                book.style.display = "block";
+                found = true;
+            } else {
+                book.style.display = "none";
+            }
+        });
+
+        if (!found) {
+            alert('Maaf, buku tidak ditemukan.');
+        }
+    }
+</script>
+
         </center>
     </main>
 <body>
@@ -618,8 +650,92 @@ body {
         }
     </style>
 </head>
-<!DOCTYPE html>
-<html lang="id">
+<body>
+    <!-- Banner -->
+    <div class="event-banner">
+        <h2><i>National Library Week</i></h2>
+        <p>Celebrate the valuable role of libraries in transforming lives and strengthening communities!</p>
+    </div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .event-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Agar elemen tetap rapi saat layar kecil */
+        }
+
+        #Event {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .event-box {
+            max-width: 400px;
+        }
+
+        /* Responsif untuk layar kecil (mobile) */
+        @media (max-width: 768px) {
+            .event-container {
+                flex-direction: column; /* Susun gambar dan teks secara vertikal */
+                align-items: center;
+                text-align: center;
+            }
+
+            #Event {
+                width: 100%; /* Gambar menyesuaikan lebar */
+                max-width: 300px;
+            }
+
+            .event-box {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="event-container">
+            <img id="Event" src="https://alastore.ala.org/sites/default/files/2024-11/national-library-week-2025-poster-600x900-store_0.jpg" alt="Library Event Poster">
+
+            <div class="event-box">
+                <h2>April 6 - 12, 2025</h2>
+                <p>Join us for exciting events, workshops, and activities at your local library.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventModal">Learn More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalLabel">Event Highlights</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><b>Monday, April 7:</b> Right to Read Day</li>
+                        <li><b>Tuesday, April 8:</b> National Library Workers Day</li>
+                        <li><b>Wednesday, April 9:</b> National Library Outreach Day</li>
+                        <li><b>Thursday, April 10:</b> Take Action for Libraries Day</li>
+                    </ul>
+                    <p>Explore more about the event on the <a href="https://www.ala.org/conferencesevents/celebrationweeks/natlibraryweek" target="_blank">official website</a>.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>	
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -792,7 +908,14 @@ body {
                 left: 7.5%;
                 text-align: center;
             }
-        }
+		.cookie-banner p {
+                font-size: 14px;
+            }
+
+            .cookie-banner button {
+                width: 100px;
+            }
+	}
     </style>
 </head>
 <body>
@@ -840,13 +963,52 @@ body {
                 document.body.classList.contains("lampu-tidur") ? "☀️" : "🌙";
         }
 
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function manageCookies() {
+            let confirmation = confirm("Apakah Anda ingin menghapus cookie?");
+            if (confirmation) {
+                document.cookie = "cookiesAccepted=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.getElementById('cookie-banner').style.display = 'block';
+                alert("Cookie telah dihapus!");
+            }
+        }
+
         function acceptCookies() {
+            setCookie("cookiesAccepted", "true", 30);
             document.getElementById('cookie-banner').style.display = 'none';
         }
-    </script>
 
+        window.onload = function() {
+            if (getCookie("cookiesAccepted") === "true") {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
-<footer>
-        © 2025🍫
+	
+<!-- Footer -->
+    <footer>
+        <p>&copy; 2025🍫</p>
     </footer>
+</body>
+</html>
